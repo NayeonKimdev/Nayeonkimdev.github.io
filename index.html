@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - AI Video Engineer</title>
+    <title>Nayeon Kim - FFmpeg WebAssembly Developer</title>
     <style>
         * {
             margin: 0;
@@ -12,11 +12,27 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
             min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
         
         .container {
@@ -26,19 +42,32 @@
         }
         
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            animation: slideDown 0.8s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 60px 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            animation: slideDown 1s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
         }
         
         @keyframes slideDown {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-50px);
             }
             to {
                 opacity: 1;
@@ -47,96 +76,156 @@
         }
         
         h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-size: 4em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #64ffda, #00d4ff, #0099cc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
         }
         
         .subtitle {
-            font-size: 1.5em;
-            color: #666;
-            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #b0b0b0;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        
+        .description {
+            font-size: 1.1em;
+            color: #888;
+            margin-bottom: 35px;
+            line-height: 1.7;
+            max-width: 600px;
         }
         
         .contact-links {
             display: flex;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
         }
         
         .contact-links a {
             text-decoration: none;
-            color: #667eea;
-            padding: 10px 20px;
-            border: 2px solid #667eea;
-            border-radius: 25px;
+            color: #64ffda;
+            padding: 12px 24px;
+            border: 1px solid rgba(100, 255, 218, 0.3);
+            border-radius: 12px;
             transition: all 0.3s ease;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.1), transparent);
+            transition: left 0.5s;
+        }
+        
+        .contact-links a:hover::before {
+            left: 100%;
         }
         
         .contact-links a:hover {
-            background: #667eea;
-            color: white;
+            background: rgba(100, 255, 218, 0.1);
+            border-color: #64ffda;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.2);
         }
         
         .skills-section {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+        
+        .skills-section h2 {
+            color: #64ffda;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            font-weight: 600;
         }
         
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 16px;
+            margin-top: 30px;
         }
         
         .skill-tag {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 10px 15px;
-            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.1), rgba(0, 212, 255, 0.1));
+            color: #64ffda;
+            padding: 12px 16px;
+            border-radius: 12px;
             text-align: center;
             font-weight: 500;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(100, 255, 218, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(100, 255, 218, 0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .skill-tag:hover::before {
+            left: 100%;
         }
         
         .skill-tag:hover {
-            transform: scale(1.05);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(100, 255, 218, 0.2);
+            border-color: #64ffda;
         }
         
         .projects-section {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
         
         .section-title {
-            color: white;
-            font-size: 2.5em;
-            margin-bottom: 30px;
+            color: #64ffda;
+            font-size: 3em;
+            margin-bottom: 40px;
             text-align: center;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
         }
         
         .project-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
@@ -147,127 +236,182 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            height: 2px;
+            background: linear-gradient(90deg, #64ffda, #00d4ff, #0099cc);
+        }
+        
+        .project-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(100, 255, 218, 0.05), rgba(0, 212, 255, 0.05));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover::after {
+            opacity: 1;
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+            transform: translateY(-15px);
+            box-shadow: 0 35px 70px rgba(0,0,0,0.3);
+            border-color: rgba(100, 255, 218, 0.3);
         }
         
         .project-title {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #64ffda;
+            font-weight: 600;
         }
         
         .project-description {
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.6;
+            color: #b0b0b0;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 1.05em;
         }
         
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 30px;
         }
         
         .tech-badge {
-            background: #f0f0f0;
-            color: #667eea;
-            padding: 5px 12px;
-            border-radius: 15px;
+            background: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-size: 0.9em;
             font-weight: 500;
+            border: 1px solid rgba(100, 255, 218, 0.2);
         }
         
         .project-links {
             display: flex;
-            gap: 15px;
+            gap: 16px;
         }
         
         .project-link {
             flex: 1;
             text-align: center;
-            padding: 12px;
-            border-radius: 10px;
+            padding: 14px 20px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
         .demo-link {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
+            background: linear-gradient(135deg, #64ffda, #00d4ff);
+            color: #0f0f23;
         }
         
         .demo-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(100, 255, 218, 0.3);
         }
         
         .github-link {
-            background: #24292e;
-            color: white;
+            background: rgba(255, 255, 255, 0.1);
+            color: #e0e0e0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .github-link:hover {
-            background: #1a1e22;
-            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
         
         footer {
             text-align: center;
-            color: white;
-            padding: 40px 20px;
+            color: #888;
+            padding: 60px 20px;
             font-size: 1.1em;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 40px;
         }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 2em;
+                font-size: 2.5em;
+            }
+            
+            .subtitle {
+                font-size: 1.4em;
             }
             
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .project-card {
+                padding: 30px;
+            }
+            
+            .contact-links {
+                justify-content: center;
+            }
+        }
+        
+        /* 추가 애니메이션 효과 */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .project-card {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .project-card:nth-child(2) {
+            animation-delay: -2s;
+        }
+        
+        .project-card:nth-child(3) {
+            animation-delay: -4s;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Your Name</h1>
-            <p class="subtitle">AI Video Engineer | Computer Vision Specialist</p>
-            <p style="margin-bottom: 20px; color: #666;">
-                Building next-generation video processing solutions with deep learning and real-time optimization
+            <h1>Nayeon Kim</h1>
+            <p class="subtitle">FFmpeg WebAssembly Developer</p>
+            <p class="description">
+                브라우저에서 FFmpeg를 활용한 혁신적인 비디오 처리 솔루션을 개발합니다. 
+                WebAssembly 기술로 클라이언트 사이드에서 강력한 비디오 처리를 구현합니다.
             </p>
             <div class="contact-links">
-                <a href="https://github.com/yourusername">GitHub</a>
-                <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
-                <a href="mailto:your.email@example.com">Email</a>
-                <a href="assets/resume.pdf">Resume</a>
+                <a href="https://github.com/nayeonkimdev">GitHub</a>
+                <a href="https://nayeonkimdev.github.io/ffmpeg-wasm-upscale/">FFmpeg 체험</a>
+                <a href="mailto:nayeonkimdev@gmail.com">Email</a>
+                <a href="https://nayeonkimdev.github.io/ffmpeg-wasm-upscale/">프로젝트 보기</a>
             </div>
         </header>
 
         <div class="skills-section">
-            <h2 style="color: #333; margin-bottom: 20px;">Technical Skills</h2>
+            <h2>Technical Skills</h2>
             <div class="skills-grid">
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">C++</div>
-                <div class="skill-tag">JavaScript</div>
-                <div class="skill-tag">TensorFlow</div>
-                <div class="skill-tag">PyTorch</div>
-                <div class="skill-tag">OpenCV</div>
                 <div class="skill-tag">FFmpeg</div>
-                <div class="skill-tag">WebRTC</div>
-                <div class="skill-tag">CUDA</div>
-                <div class="skill-tag">GStreamer</div>
-                <div class="skill-tag">MediaPipe</div>
-                <div class="skill-tag">ONNX</div>
+                <div class="skill-tag">WebAssembly</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">HTML5</div>
+                <div class="skill-tag">CSS3</div>
+                <div class="skill-tag">Canvas API</div>
+                <div class="skill-tag">WebGL</div>
+                <div class="skill-tag">Video Processing</div>
+                <div class="skill-tag">Media APIs</div>
+                <div class="skill-tag">File API</div>
             </div>
         </div>
 
@@ -275,115 +419,33 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3 class="project-title">Real-Time Video Segmentation</h3>
+                    <h3 class="project-title">FFmpeg WebAssembly 체험</h3>
                     <p class="project-description">
-                        Browser-based semantic segmentation using TensorFlow.js. Achieves 30+ FPS on standard webcam input with MobileNet backbone.
+                        브라우저에서 직접 FFmpeg를 체험해볼 수 있는 웹 애플리케이션입니다. 
+                        WebAssembly를 통해 클라이언트 사이드에서 비디오 처리를 수행할 수 있으며, 
+                        다양한 비디오 포맷 변환과 필터 적용이 가능합니다.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-badge">TensorFlow.js</span>
-                        <span class="tech-badge">WebGL</span>
-                        <span class="tech-badge">React</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/video-segmentation/" class="project-link demo-link">Live Demo</a>
-                        <a href="https://github.com/yourusername/video-segmentation" class="project-link github-link">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3 class="project-title">AI Video Enhancement Pipeline</h3>
-                    <p class="project-description">
-                        End-to-end video processing pipeline with super-resolution, denoising, and frame interpolation. Deployed on AWS with auto-scaling.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">PyTorch</span>
                         <span class="tech-badge">FFmpeg</span>
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">AWS</span>
+                        <span class="tech-badge">WebAssembly</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">HTML5</span>
                     </div>
                     <div class="project-links">
-                        <a href="projects/video-enhancement/" class="project-link demo-link">Live Demo</a>
-                        <a href="https://github.com/yourusername/video-enhancement" class="project-link github-link">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3 class="project-title">Multi-Object Tracking System</h3>
-                    <p class="project-description">
-                        Real-time object detection and tracking using YOLOv8 and DeepSORT. Handles multiple video streams with < 50ms latency.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">YOLOv8</span>
-                        <span class="tech-badge">OpenCV</span>
-                        <span class="tech-badge">Redis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/object-tracking/" class="project-link demo-link">Live Demo</a>
-                        <a href="https://github.com/yourusername/object-tracking" class="project-link github-link">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3 class="project-title">WebRTC Streaming Platform</h3>
-                    <p class="project-description">
-                        Low-latency video streaming platform with adaptive bitrate. Supports 1000+ concurrent connections with < 1s glass-to-glass latency.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">WebRTC</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">Socket.io</span>
-                        <span class="tech-badge">Redis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/streaming-platform/" class="project-link demo-link">Live Demo</a>
-                        <a href="https://github.com/yourusername/streaming-platform" class="project-link github-link">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3 class="project-title">Video Analytics Dashboard</h3>
-                    <p class="project-description">
-                        Interactive dashboard for video content analysis. Features scene detection, object counting, and automated quality metrics.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">React</span>
-                        <span class="tech-badge">D3.js</span>
-                        <span class="tech-badge">FastAPI</span>
-                        <span class="tech-badge">PostgreSQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/analytics-dashboard/" class="project-link demo-link">Live Demo</a>
-                        <a href="https://github.com/yourusername/analytics-dashboard" class="project-link github-link">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <h3 class="project-title">Edge AI Video Processor</h3>
-                    <p class="project-description">
-                        Optimized video AI models for edge devices. Runs real-time inference on Jetson Nano with TensorRT optimization.
-                    </p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">C++</span>
-                        <span class="tech-badge">TensorRT</span>
-                        <span class="tech-badge">CUDA</span>
-                        <span class="tech-badge">GStreamer</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/edge-ai/" class="project-link demo-link">Documentation</a>
-                        <a href="https://github.com/yourusername/edge-ai" class="project-link github-link">GitHub</a>
+                        <a href="https://nayeonkimdev.github.io/ffmpeg-wasm-upscale/" class="project-link demo-link">체험해보기</a>
+                        <a href="https://github.com/nayeonkimdev/ffmpeg-wasm-upscale" class="project-link github-link">GitHub</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <footer>
-            <p>© 2025 Your Name | Built with passion for AI and Video Technology</p>
+            <p>© 2025 Nayeon Kim | FFmpeg WebAssembly 기술로 만든 비디오 처리 솔루션</p>
         </footer>
     </div>
 
     <script>
-        // Add smooth scroll animation for project cards
+        // 스크롤 애니메이션
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -100px 0px'
@@ -392,23 +454,33 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animation = 'slideDown 0.6s ease forwards';
+                    entry.target.style.animation = 'slideDown 0.8s ease forwards';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.project-card').forEach(card => {
+        document.querySelectorAll('.project-card, .skills-section').forEach(card => {
             observer.observe(card);
         });
 
-        // Add interactive hover effect for skills
+        // 스킬 태그 호버 효과
         document.querySelectorAll('.skill-tag').forEach(skill => {
             skill.addEventListener('mouseover', function() {
-                this.style.transform = 'scale(1.1) rotate(2deg)';
+                this.style.transform = 'translateY(-3px) scale(1.05) rotate(1deg)';
             });
             skill.addEventListener('mouseout', function() {
-                this.style.transform = 'scale(1) rotate(0deg)';
+                this.style.transform = 'translateY(0) scale(1) rotate(0deg)';
             });
+        });
+
+        // 마우스 움직임에 따른 배경 효과
+        document.addEventListener('mousemove', (e) => {
+            const { clientX, clientY } = e;
+            const x = (clientX / window.innerWidth) * 100;
+            const y = (clientY / window.innerHeight) * 100;
+            
+            document.body.style.setProperty('--mouse-x', `${x}%`);
+            document.body.style.setProperty('--mouse-y', `${y}%`);
         });
     </script>
 </body>
