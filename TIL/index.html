@@ -12,345 +12,283 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #e0e0e0;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2d1b3d 100%);
+            font-family: 'MS Sans Serif', 'Microsoft Sans Serif', sans-serif;
+            font-size: 11px;
+            line-height: 1.2;
+            color: #c0c0c0;
+            background: #000000;
             min-height: 100vh;
             overflow-x: hidden;
-        }
-        
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(50, 205, 50, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: -1;
+            cursor: default;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;
         }
         
-        header {
-            background: rgba(138, 43, 226, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(138, 43, 226, 0.3);
-            border-radius: 24px;
-            padding: 60px 40px;
-            margin-bottom: 60px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            animation: slideDown 1s ease;
-            position: relative;
-            overflow: hidden;
+        /* Windows 95/98 스타일 창 */
+        .window {
+            background: #c0c0c0;
+            border: 2px outset #c0c0c0;
+            margin: 10px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
         
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #8a2be2, #32cd32, #8a2be2);
+        .window-header {
+            background: linear-gradient(to right, #000080, #000080);
+            color: #ffffff;
+            padding: 4px 8px;
+            font-weight: bold;
+            font-size: 11px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #808080;
         }
         
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .window-title {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .window-controls {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .window-control {
+            width: 16px;
+            height: 14px;
+            background: #c0c0c0;
+            border: 1px outset #c0c0c0;
+            font-size: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        
+        .window-control:hover {
+            background: #d0d0d0;
+        }
+        
+        .window-control:active {
+            border: 1px inset #c0c0c0;
+        }
+        
+        .window-content {
+            background: #c0c0c0;
+            padding: 8px;
+            color: #000000;
         }
         
         h1 {
-            font-size: 4em;
-            font-weight: 700;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #32cd32, #8a2be2, #32cd32);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.02em;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #000000;
             text-align: center;
         }
         
         .subtitle {
-            font-size: 1.8em;
-            color: #b0b0b0;
-            margin-bottom: 25px;
-            font-weight: 400;
+            font-size: 12px;
+            color: #000080;
+            margin-bottom: 8px;
+            font-weight: bold;
             text-align: center;
         }
         
         .description {
-            font-size: 1.1em;
-            color: #888;
-            margin-bottom: 35px;
-            line-height: 1.7;
-            max-width: 600px;
+            font-size: 11px;
+            color: #000000;
+            margin-bottom: 12px;
+            line-height: 1.3;
             text-align: center;
-            margin-left: auto;
-            margin-right: auto;
         }
         
         .nav-links {
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 4px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 8px;
         }
         
         .nav-links a {
             text-decoration: none;
-            color: #32cd32;
-            padding: 12px 24px;
-            border: 1px solid rgba(50, 205, 50, 0.3);
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(50, 205, 50, 0.1), transparent);
-            transition: left 0.5s;
-        }
-        
-        .nav-links a:hover::before {
-            left: 100%;
+            color: #000000;
+            padding: 4px 8px;
+            background: #c0c0c0;
+            border: 2px outset #c0c0c0;
+            font-size: 11px;
+            font-weight: normal;
+            cursor: pointer;
+            display: inline-block;
         }
         
         .nav-links a:hover {
-            background: rgba(50, 205, 50, 0.1);
-            border-color: #32cd32;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(50, 205, 50, 0.2);
+            background: #d0d0d0;
+        }
+        
+        .nav-links a:active {
+            border: 2px inset #c0c0c0;
         }
         
         .til-section {
-            background: rgba(138, 43, 226, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(138, 43, 226, 0.2);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 60px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            margin-bottom: 20px;
         }
         
         .til-section h2 {
-            color: #32cd32;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            font-weight: 600;
+            color: #000000;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: bold;
             text-align: center;
         }
         
         .til-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 8px;
+            margin-top: 8px;
         }
         
         .til-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(138, 43, 226, 0.2);
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .til-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #8a2be2, #32cd32, #8a2be2);
-        }
-        
-        .til-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(138, 43, 226, 0.05), rgba(50, 205, 50, 0.05));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .til-card:hover::after {
-            opacity: 1;
-        }
-        
-        .til-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            border-color: rgba(138, 43, 226, 0.4);
+            background: #c0c0c0;
+            border: 2px outset #c0c0c0;
+            padding: 8px;
+            margin: 4px;
         }
         
         .til-date {
-            color: #8a2be2;
-            font-size: 0.9em;
-            font-weight: 600;
-            margin-bottom: 15px;
+            color: #000080;
+            font-size: 9px;
+            font-weight: bold;
+            margin-bottom: 6px;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
         
         .til-title {
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            color: #32cd32;
-            font-weight: 600;
+            font-size: 12px;
+            margin-bottom: 6px;
+            color: #000000;
+            font-weight: bold;
         }
         
         .til-content {
-            color: #b0b0b0;
-            line-height: 1.7;
-            font-size: 1.05em;
-            margin-bottom: 20px;
+            color: #000000;
+            line-height: 1.3;
+            font-size: 10px;
+            margin-bottom: 8px;
         }
         
         .til-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
+            gap: 2px;
+            margin-top: 6px;
         }
         
         .til-tag {
-            background: rgba(50, 205, 50, 0.1);
-            color: #32cd32;
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.8em;
-            font-weight: 500;
-            border: 1px solid rgba(50, 205, 50, 0.2);
+            background: #c0c0c0;
+            color: #000000;
+            padding: 2px 4px;
+            border: 1px outset #c0c0c0;
+            font-size: 8px;
+            font-weight: normal;
         }
         
         .add-til-section {
-            background: rgba(50, 205, 50, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(50, 205, 50, 0.2);
-            border-radius: 24px;
-            padding: 40px;
-            margin-bottom: 60px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+            margin-bottom: 20px;
         }
         
         .add-til-section h2 {
-            color: #32cd32;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            font-weight: 600;
+            color: #000000;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: bold;
             text-align: center;
         }
         
         .til-form {
             display: grid;
-            gap: 20px;
-            max-width: 600px;
+            gap: 8px;
+            max-width: 500px;
             margin: 0 auto;
         }
         
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 2px;
         }
         
         .form-group label {
-            color: #32cd32;
-            font-weight: 600;
-            font-size: 1.1em;
+            color: #000000;
+            font-weight: bold;
+            font-size: 10px;
         }
         
         .form-group input,
         .form-group textarea {
-            padding: 15px;
-            border: 1px solid rgba(138, 43, 226, 0.3);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            color: #e0e0e0;
-            font-size: 1em;
-            transition: all 0.3s ease;
+            padding: 4px;
+            border: 2px inset #c0c0c0;
+            background: #ffffff;
+            color: #000000;
+            font-size: 11px;
+            font-family: 'MS Sans Serif', sans-serif;
         }
         
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #32cd32;
-            box-shadow: 0 0 0 3px rgba(50, 205, 50, 0.1);
+            border: 2px inset #000080;
         }
         
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 60px;
         }
         
         .submit-btn {
-            background: linear-gradient(135deg, #32cd32, #8a2be2);
-            color: #0a0a0a;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1em;
-            font-weight: 600;
+            background: #c0c0c0;
+            color: #000000;
+            padding: 6px 12px;
+            border: 2px outset #c0c0c0;
+            font-size: 11px;
+            font-weight: normal;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
+            margin-top: 4px;
+            font-family: 'MS Sans Serif', sans-serif;
         }
         
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(50, 205, 50, 0.3);
+            background: #d0d0d0;
+        }
+        
+        .submit-btn:active {
+            border: 2px inset #c0c0c0;
         }
         
         footer {
             text-align: center;
-            color: #888;
-            padding: 60px 20px;
-            font-size: 1.1em;
-            border-top: 1px solid rgba(138, 43, 226, 0.2);
-            margin-top: 40px;
+            color: #c0c0c0;
+            padding: 20px;
+            font-size: 10px;
+            border-top: 1px solid #808080;
+            margin-top: 20px;
         }
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 16px;
             }
             
             .subtitle {
-                font-size: 1.4em;
+                font-size: 11px;
             }
             
             .til-grid {
@@ -358,40 +296,29 @@
             }
             
             .til-card {
-                padding: 25px;
+                padding: 6px;
             }
             
             .nav-links {
                 justify-content: center;
             }
         }
-        
-        /* 추가 애니메이션 효과 */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-        
-        .til-card {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .til-card:nth-child(2) {
-            animation-delay: -2s;
-        }
-        
-        .til-card:nth-child(3) {
-            animation-delay: -4s;
-        }
-        
-        .til-card:nth-child(4) {
-            animation-delay: -6s;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
+        <div class="window">
+            <div class="window-header">
+                <div class="window-title">
+                    📚 TIL - Today I Learned
+                </div>
+                <div class="window-controls">
+                    <div class="window-control">_</div>
+                    <div class="window-control">□</div>
+                    <div class="window-control">×</div>
+                </div>
+            </div>
+            <div class="window-content">
             <h1>TIL</h1>
             <p class="subtitle">Today I Learned</p>
             <p class="description">
@@ -403,10 +330,22 @@
                 <a href="https://github.com/nayeonkimdev">GitHub</a>
                 <a href="mailto:nayeonkimdev@gmail.com">Email</a>
             </div>
-        </header>
+            </div>
+        </div>
 
+        <div class="window">
+            <div class="window-header">
+                <div class="window-title">
+                    ➕ 새로운 학습 내용 추가
+                </div>
+                <div class="window-controls">
+                    <div class="window-control">_</div>
+                    <div class="window-control">□</div>
+                    <div class="window-control">×</div>
+                </div>
+            </div>
+            <div class="window-content">
         <div class="add-til-section">
-            <h2>새로운 학습 내용 추가</h2>
             <form class="til-form" id="tilForm">
                 <div class="form-group">
                     <label for="tilDate">날짜</label>
@@ -426,12 +365,27 @@
                 </div>
                 <button type="submit" class="submit-btn">기록 추가</button>
             </form>
+                </div>
+            </div>
         </div>
 
+        <div class="window">
+            <div class="window-header">
+                <div class="window-title">
+                    📝 학습 기록
+                </div>
+                <div class="window-controls">
+                    <div class="window-control">_</div>
+                    <div class="window-control">□</div>
+                    <div class="window-control">×</div>
+                </div>
+            </div>
+            <div class="window-content">
         <div class="til-section">
-            <h2>학습 기록</h2>
             <div class="til-grid" id="tilGrid">
                 <!-- TIL 카드들이 여기에 동적으로 추가됩니다 -->
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -469,15 +423,14 @@
                 createdAt: new Date().toISOString()
             };
             
-            tilData.unshift(newTIL); // 최신 항목을 맨 위에 추가
+            tilData.unshift(newTIL);
             localStorage.setItem('tilData', JSON.stringify(tilData));
             
             displayTILData();
             document.getElementById('tilForm').reset();
             setDefaultDate();
             
-            // 성공 메시지 표시
-            showNotification('새로운 학습 내용이 추가되었습니다!', 'success');
+            alert('새로운 학습 내용이 추가되었습니다!');
         });
         
         // TIL 데이터 표시
@@ -487,8 +440,8 @@
             
             if (tilData.length === 0) {
                 tilGrid.innerHTML = `
-                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: #888;">
-                        <h3 style="color: #32cd32; margin-bottom: 20px;">아직 기록된 학습 내용이 없습니다</h3>
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 20px; color: #000000;">
+                        <h3 style="color: #000080; margin-bottom: 8px;">아직 기록된 학습 내용이 없습니다</h3>
                         <p>위의 폼을 사용하여 첫 번째 학습 내용을 기록해보세요!</p>
                     </div>
                 `;
@@ -506,16 +459,18 @@
                         ${til.tags.map(tag => `<span class="til-tag">${tag}</span>`).join('')}
                     </div>
                     <button onclick="deleteTIL(${til.id})" style="
-                        background: rgba(255, 0, 0, 0.1);
-                        color: #ff6b6b;
-                        border: 1px solid rgba(255, 0, 0, 0.3);
-                        padding: 8px 16px;
-                        border-radius: 8px;
+                        background: #c0c0c0;
+                        color: #000000;
+                        border: 2px outset #c0c0c0;
+                        padding: 4px 8px;
                         cursor: pointer;
-                        margin-top: 15px;
-                        transition: all 0.3s ease;
-                    " onmouseover="this.style.background='rgba(255, 0, 0, 0.2)'" 
-                       onmouseout="this.style.background='rgba(255, 0, 0, 0.1)'">
+                        margin-top: 8px;
+                        font-size: 9px;
+                        font-family: 'MS Sans Serif', sans-serif;
+                    " onmouseover="this.style.background='#d0d0d0'" 
+                       onmouseout="this.style.background='#c0c0c0'"
+                       onmousedown="this.style.border='2px inset #c0c0c0'"
+                       onmouseup="this.style.border='2px outset #c0c0c0'">
                         삭제
                     </button>
                 `;
@@ -540,67 +495,55 @@
                 tilData = tilData.filter(til => til.id !== id);
                 localStorage.setItem('tilData', JSON.stringify(tilData));
                 displayTILData();
-                showNotification('학습 기록이 삭제되었습니다.', 'info');
+                alert('학습 기록이 삭제되었습니다.');
             }
         }
         
-        // 알림 표시
-        function showNotification(message, type) {
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: ${type === 'success' ? 'rgba(50, 205, 50, 0.9)' : 'rgba(138, 43, 226, 0.9)'};
-                color: #0a0a0a;
-                padding: 15px 25px;
-                border-radius: 12px;
-                font-weight: 600;
-                z-index: 1000;
-                animation: slideIn 0.3s ease;
-            `;
-            notification.textContent = message;
-            
-            document.body.appendChild(notification);
-            
+        // Windows 스타일 창 제어
+        document.querySelectorAll('.window-control').forEach(control => {
+            control.addEventListener('click', function() {
+                const window = this.closest('.window');
+                const symbol = this.textContent;
+                
+                if (symbol === '_') {
+                    window.style.transform = 'scale(0.1)';
+                    window.style.opacity = '0';
             setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
+                        window.style.display = 'none';
+                    }, 200);
+                } else if (symbol === '□') {
+                    if (window.style.position === 'fixed') {
+                        window.style.position = 'relative';
+                        window.style.top = 'auto';
+                        window.style.left = 'auto';
+                        window.style.width = 'auto';
+                        window.style.height = 'auto';
+                        window.style.zIndex = 'auto';
+                    } else {
+                        window.style.position = 'fixed';
+                        window.style.top = '10px';
+                        window.style.left = '10px';
+                        window.style.width = 'calc(100% - 20px)';
+                        window.style.height = 'calc(100vh - 20px)';
+                        window.style.zIndex = '1000';
+                    }
+                } else if (symbol === '×') {
+                    window.style.transform = 'scale(0.1)';
+                    window.style.opacity = '0';
                 setTimeout(() => {
-                    document.body.removeChild(notification);
-                }, 300);
-            }, 3000);
-        }
-        
-        // 애니메이션 CSS 추가
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            @keyframes slideOut {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // 스크롤 애니메이션
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'slideDown 0.8s ease forwards';
+                        window.style.display = 'none';
+                    }, 200);
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.til-card, .til-section, .add-til-section').forEach(card => {
-            observer.observe(card);
+        });
+        
+        // 더블클릭으로 창 복원
+        document.querySelectorAll('.window').forEach(window => {
+            window.addEventListener('dblclick', function() {
+                this.style.display = 'block';
+                this.style.transform = 'scale(1)';
+                this.style.opacity = '1';
+            });
         });
     </script>
 </body>
